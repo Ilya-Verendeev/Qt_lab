@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/about.png</file>
+        <file>images/add-documents.png</file>
+        <file>images/copy.png</file>
+        <file>images/cut.png</file>
+        <file>images/exit.png</file>
+        <file>images/file (1).png</file>
+        <file>images/file.png</file>
+        <file>images/font-size.png</file>
+        <file>images/insert-file.png</file>
+        <file>images/open-folder-with-document.png</file>
+        <file>images/qt.png</file>
+        <file>images/redo.png</file>
+        <file>images/save-as.png</file>
+        <file>images/saving-documents.png</file>
+        <file>images/undo.png</file>
+    </qresource>
+</RCC>
