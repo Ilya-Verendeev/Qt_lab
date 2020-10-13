@@ -26,17 +26,17 @@ MainWindow::MainWindow(const QString &fileName,QWidget *parent)
             this, SLOT(documentModified()));
 
     connect(ui->actionAboutQt, SIGNAL(triggered()),
-            this, SLOT(aboutQt()));
+            qApp, SLOT(aboutQt()));
     connect(ui->actionCut, SIGNAL(triggered()),
-            this, SLOT(cut()));
+            ui->textEdit, SLOT(cut()));
     connect(ui->actionCopy, SIGNAL(triggered()),
-            this, SLOT(copy()));
+            ui->textEdit, SLOT(copy()));
     connect(ui->actionPaste, SIGNAL(triggered()),
-            this, SLOT(paste()));
+            ui->textEdit, SLOT(paste()));
     connect(ui->actionUndo, SIGNAL(triggered()),
-            this, SLOT(undo()));
+            ui->textEdit, SLOT(undo()));
     connect(ui->actionRedo, SIGNAL(triggered()),
-            this, SLOT(redo()));
+            ui->textEdit, SLOT(redo()));
 
     connect(ui->textEdit, SIGNAL(cutAvailable(bool)),
             ui->actionCut, SLOT(setEnabled(bool)));
@@ -193,15 +193,6 @@ bool MainWindow::on_SaveAs_triggered()
      return saveFile(fileName);
 }
 
-void MainWindow::on_About_programm_triggered()
-{
-    QString appName(qApp->applicationName());
-    QString appVersion(qApp->applicationVersion());
-    QMessageBox::about(this, "О программе", appName + "\nVersion: " +
-                       appVersion + "\n" + "Разработчик : \n\tВерендеев Илья");
-}
-
-
 void MainWindow::on_actionSelectFont_triggered()
 {
     bool ok=false;
@@ -230,4 +221,12 @@ void MainWindow::on_actionOpen_triggered()
         }
     }
 
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QString appName(qApp->applicationName());
+    QString appVersion(qApp->applicationVersion());
+    QMessageBox::about(this, "О программе", appName + "\nVersion: " +
+                       appVersion + "\n" + "Разработчик : \n\tВерендеев Илья");
 }
