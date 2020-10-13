@@ -33,7 +33,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_About_programm_triggered();
 
     void on_actionSelectFont_triggered();
 
@@ -46,6 +45,8 @@ private slots:
     bool on_Save_triggered();
 
     void on_actionOpen_triggered();
+
+    void on_actionAbout_triggered();
 
 protected:
     void closeEvent(QCloseEvent *e);
